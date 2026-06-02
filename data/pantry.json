@@ -1,0 +1,36 @@
+{
+    "kyl": [
+        {
+            "id": 1,
+            "name": "",
+            "quantity": null,
+            "amount": null,
+            "unit": ""
+        },
+        {
+            "id": 1780424886561,
+            "name": "Mjölk",
+            "quantity": 2,
+            "amount": 1.5,
+            "unit": "L"
+        }
+    ],
+    "frys": [
+        {
+            "id": 2,
+            "name": "",
+            "quantity": null,
+            "amount": null,
+            "unit": ""
+        }
+    ],
+    "skafferi": [
+        {
+            "id": 3,
+            "name": "",
+            "quantity": null,
+            "amount": null,
+            "unit": ""
+        }
+    ]
+}
