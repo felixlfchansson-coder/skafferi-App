@@ -13,6 +13,20 @@
             "quantity": 2,
             "amount": 1.5,
             "unit": "L"
+        },
+        {
+            "id": 1780519740815,
+            "name": "Ägg",
+            "quantity": 6,
+            "amount": null,
+            "unit": "st"
+        },
+        {
+            "id": 1780520966863,
+            "name": "Ägg",
+            "quantity": 12,
+            "amount": null,
+            "unit": "st"
         }
     ],
     "frys": [

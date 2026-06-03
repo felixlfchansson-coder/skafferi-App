@@ -1,3 +1,29 @@
 {
-    "customRecipes": []
+    "customRecipes": [
+        {
+            "id": 1780519981246,
+            "title": "Fredagstacos",
+            "portions": 4,
+            "cookingTime": 30,
+            "favorite": false,
+            "instructions": "Bryn köttfärsen. Tillsätt tacokrydda och vatten.",
+            "ingredients": [
+                {
+                    "name": "Köttfärs",
+                    "amount": 500,
+                    "unit": "g"
+                },
+                {
+                    "name": "Tacokrydda",
+                    "amount": 1,
+                    "unit": "påse"
+                },
+                {
+                    "name": "Tacoskal",
+                    "amount": 12,
+                    "unit": "st"
+                }
+            ]
+        }
+    ]
 }
