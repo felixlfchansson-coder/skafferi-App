@@ -352,7 +352,9 @@ app.get("/food/search", async (req, res) => {
             });
         const data = await response.json();
 
-        const products = data.products.map((p) => ({
+       const products = data.products
+        .filter(p => p.product_name || p.generic_name)  // ta bara med produkter som har ett namn
+        .map((p) => ({
             name: p.product_name || p.generic_name || query,
             brand: p.brands || null,
             amount: p.product_quantity || null,
