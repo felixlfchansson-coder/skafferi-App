@@ -323,6 +323,16 @@ app.put("/shopping-list/:id/bought", (req, res) => {
     res.json({ message: `${item.name} flyttad till skafferiet`, item });
 });
 
+// Hämta alla unika varunamn för autokomplettering
+app.get("/pantry/suggestions", (req, res) => {
+    const suggestions = db.prepare(`
+        SELECT DISTINCT name FROM pantry
+        ORDER BY name ASC
+    `).all();
+
+    res.json(suggestions.map((row) => row.name));
+});
+
 // ─────────────────────────────────────────
 // Starta servern
 // ─────────────────────────────────────────
