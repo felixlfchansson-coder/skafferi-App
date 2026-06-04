@@ -345,7 +345,11 @@ app.get("/food/search", async (req, res) => {
 
     try {
        const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(query)}&search_simple=1&action=process&json=1&page_size=5`;
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'SkafferiApp/1.0 (kontakt@skafferi.se)'
+            }
+            });
         const data = await response.json();
 
         const products = data.products.map((p) => ({
