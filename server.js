@@ -333,6 +333,35 @@ app.get("/pantry/suggestions", (req, res) => {
     res.json(suggestions.map((row) => row.name));
 });
 
+// Sök efter produkter via Open Food Facts
+app.get("/food/search", async (req, res) => {
+    const query = req.query.q;
+
+    if (!query) {
+        return res.status(400).json({ error: "q krävs" });
+    }
+
+    try {
+       const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(query)}&search_simple=1&action=process&json=1&page_size=5`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const products = data.products.map((p) => ({
+            name: p.product_name || p.generic_name || query,
+            brand: p.brands || null,
+            amount: p.product_quantity || null,
+            unit: p.quantity_unit || null,
+            barcode: p.code || null,
+            image: p.image_front_small_url || p.image_url || null,
+        }));
+
+        res.json(products);
+    } catch (e) {
+    console.log("FEL:", e.message);
+    res.status(500).json({ error: "Kunde inte hämta produkter" });
+}
+});
+
 // ─────────────────────────────────────────
 // Starta servern
 // ─────────────────────────────────────────
