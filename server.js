@@ -7,6 +7,8 @@ const db = require("./database");
 const app = express();
 const port = 3000;
 
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 app.use(express.json());
 
 // ─────────────────────────────────────────
